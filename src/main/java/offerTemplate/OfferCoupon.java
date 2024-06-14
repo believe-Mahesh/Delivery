@@ -1,14 +1,43 @@
 package offerTemplate;
 
-public abstract class OfferCoupon {
+import dto.OfferDetails;
 
-    public abstract Double getUpperPermissibleWeight();
+public class OfferCoupon {
 
-    public abstract Double getLowerPermissibleWeight();
+    private double discount;
+    private double upperPermissibleWeight;
 
-    public abstract Double getUpperPermissibleDistance();
+    private double lowerPermissibleWeight;
 
-    public abstract Double getLowerPermissibleDistance();
+    private double upperPermissibleDistance;
+
+    private double lowerPermissibleDistance;
+
+    public OfferCoupon() {}
+
+    public OfferCoupon(OfferDetails offerDetails) {
+        this.discount = offerDetails.getDiscount();
+        this.upperPermissibleWeight = offerDetails.getMaximumWeight();
+        this.lowerPermissibleWeight = offerDetails.getMinimumWeight();
+        this.upperPermissibleDistance = offerDetails.getMaximumDistance();
+        this.lowerPermissibleDistance = offerDetails.getMinimumDistance();
+    }
+
+    public Double getUpperPermissibleWeight() {
+        return upperPermissibleWeight;
+    }
+
+    public Double getLowerPermissibleWeight() {
+        return lowerPermissibleWeight;
+    }
+
+    public Double getUpperPermissibleDistance() {
+        return upperPermissibleDistance;
+    }
+
+    public Double getLowerPermissibleDistance() {
+        return lowerPermissibleDistance;
+    }
 
     private boolean isValidDistance(Double distance) {
         return ((Double.compare(distance, getLowerPermissibleDistance()) == 0
@@ -30,5 +59,7 @@ public abstract class OfferCoupon {
         return isValidDistance(distance) && isValidWeight(weight);
     }
 
-    public abstract Double getDiscount();
+    public Double getDiscount() {
+        return discount;
+    }
 }
