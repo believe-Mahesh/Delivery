@@ -31,6 +31,16 @@ Total cost = Base Delivery Cost + (Package Total Weight * 10) + (Distance to Des
 Discount calculation is based on Offer coupon id supplied during input.<br>
 Net Cost = Total Cost - Discount</br>
 
+##### Run Instructions
+
+- Make sure that you had installed maven in your machine. Maven version must be above 3.3.1 for the exec plugin to
+support multiple main classes.
+- clone the project from the repo url https://github.com/believe-Mahesh/Delivery.git
+- Run cd Delivery in cli to change directory into the project folder.
+- Run mvn clean install
+- Run mvn exec:java@cost-estimation
+- This will prompt for the input values.
+
 
 ##### Input and Output from CLI
 
@@ -90,6 +100,17 @@ package and come back, so the waiting time must be 2*delivery time.
 ***EstimateTimeCommand.java*** is the command class used to calculate the estimated delivery time for each package.
 
 ***ShipmentService.java*** contains the implementation for time estimation.
+
+
+##### Run Instructions
+
+- Make sure that you had installed maven in your machine. Maven version must be above 3.3.1 for the exec plugin to
+  support multiple main classes.
+- clone the project from the repo url https://github.com/believe-Mahesh/Delivery.git
+- Run cd Delivery in cli to change directory into the project folder.
+- Run mvn clean install
+- Run mvn exec:java@time-estimation
+- This will prompt for the input values.
 
 ##### Input and Output from cli
 
