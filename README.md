@@ -7,13 +7,16 @@ Calculate the discount and net cost of each package for kiki's delivery business
 <strong>DeliveryCostEstimation.java</strong> - This class is used to calculate the discount, net cost for each package
 when base delivery cost, package weight, package distance, offer coupon id and package id are given as input.
 
-<strong>OfferCoupon.java</strong> is the abstract class with offer coupon terms validation and other details. This flow
-follows ***Template Design Pattern*** with implementation for each offer coupons with permissible range of weight and
-distance used in validity calculation.
+<strong>OfferCoupon.java</strong> is the class used to validate the offer coupon id supplied in the package details. 
+This class gets the offer details from CostEstimationService.java and validates if the package qualifies for the 
+discount.
 
+<strong>offer-coupons.csv</strong> file in resources folder contains the offer coupon details. This is read in 
+CostEstimationService.java during in constructor and the details are passed to OfferCoupon.java for validation.
+Offers can be added or updated without build and deployment when externalized. This is added after the initial review.
 
-<strong>OfferCouponFactory.java</strong> is used to initialize the corresponding OfferCoupon implementation based on
-OfferCoupon Id. This Class follows ***Factory Design Pattern***.
+Note : Always add both minimum and maximum values for weight and distance. If the minimum value is absent, add 0
+(Refer OFR001)
 
 Note : If the Offer Coupon Id provided during input is not present in the factory, then <strong>InvalidCouponIdException
 </strong> is thrown and handled to set discount value to 0.

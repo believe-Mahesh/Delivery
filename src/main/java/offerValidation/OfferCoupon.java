@@ -1,4 +1,4 @@
-package offerTemplate;
+package offerValidation;
 
 import dto.OfferDetails;
 

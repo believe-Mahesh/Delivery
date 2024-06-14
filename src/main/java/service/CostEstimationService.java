@@ -4,7 +4,7 @@ import dto.OfferDetails;
 import dto.PackageDetails;
 import exception.InvalidCouponIdException;
 import exception.InvalidOfferDetailsFileException;
-import offerTemplate.OfferCoupon;
+import offerValidation.OfferCoupon;
 
 import java.io.BufferedReader;
 import java.io.IOException;
